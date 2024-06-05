@@ -1,0 +1,28 @@
+def calculator():
+    while True:
+        try:
+            num1 = float(input("Введите первое число: "))
+            operator = input("Введите оператор (+, -, *, /): ")
+            num2 = float(input("Введите второе число: "))
+
+            if operator == '+':
+                print(f"Результат: {num1 + num2}")
+            elif operator == '-':
+                print(f"Результат: {num1 - num2}")
+            elif operator == '*':
+                print(f"Результат: {num1 * num2}")
+            elif operator == '/':
+                if num2 != 0:
+                    print(f"Результат: {num1 / num2}")
+                else:
+                    print("Ошибка: деление на ноль")
+            else:
+                print("Ошибка: неверный оператор")
+
+            choice = input("Желаете продолжить? (да/нет): ")
+            if choice.lower() != 'да':
+                break
+        except ValueError:
+            print("Ошибка: введены некорректные данные")
+
+calculator()
